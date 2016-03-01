@@ -50,31 +50,29 @@ $(document).ready(function() {
 
 
 		$('.crystalImage').on('click', function(){
-		      counter = counter + parseInt($(this).data('num'));
-		     
-
+		    counter = counter + parseInt($(this).data('num'));
 		   
-		      $('#yourScore').text(counter);
+		    $('#yourScore').text(counter);
 
-		      if (counter == numberToGuess){
-		        alert('You won!!!!');
-		        wins ++;
-		        $('#win').text(wins);
-		        console.log(wins)
-		        $('#crystals').empty();
-		        newCrystals();
-		        newGame();
+		    if (counter == numberToGuess){
+		      $('#status').text('You won!!!!');
+		      wins ++;
+		      $('#win').text(wins);
+		      console.log(wins)
+		      $('#crystals').empty();
+		      newCrystals();
+		      newGame();
 		        
-		      }else if( counter > numberToGuess){
-		        alert('You lost!')
+		    } else if ( counter > numberToGuess){
+		        $('#status').text('You lost!')
 		        losses ++;
 		        $('#loss').text(losses);
 		        console.log(losses)
 		        $('#crystals').empty();
 		        newCrystals();
 		        newGame();
-		      }
-		    });
+		    }
+		});
 	}
 
 });
